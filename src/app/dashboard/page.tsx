@@ -22,7 +22,7 @@ const page = async ({ searchParams }: PageProps) => {
       externalId: auth.id,
     },
   })
-  if (!user) redirect("/sign-in")
+  if (!user) redirect("/welcome")
 
   const resolvedParams = await searchParams
   const intent = resolvedParams.intent

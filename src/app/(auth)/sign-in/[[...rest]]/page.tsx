@@ -1,15 +1,10 @@
 "use client"
 import { SignIn } from "@clerk/nextjs"
-import { useSearchParams } from "next/navigation"
 
 const Page = () => {
-  const searchParams = useSearchParams()
-  const intent = searchParams.get("intent")
   return (
     <div className="flex w-full flex-1 items-center justify-center">
-      <SignIn
-        forceRedirectUrl={intent ? `/dashboard?intent=${intent}` : "/dashboard"}
-      />
+      <SignIn fallbackRedirectUrl="/welcome" forceRedirectUrl="/welocme" />
     </div>
   )
 }
